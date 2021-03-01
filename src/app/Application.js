@@ -18,6 +18,7 @@ export default class Application extends EventEmitter {
     this.data = { };
 
     this.init();
+  
   }
 
   static get events() {
@@ -35,10 +36,11 @@ export default class Application extends EventEmitter {
 
     const animation = new Animation();
 
-    animation.start()
+    await animation.start()
 
     this.data.animation = animation
 
+    
     this.emit(Application.events.APP_READY);
   }
 }
